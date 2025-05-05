@@ -30,7 +30,7 @@ export default function LoginForm() {
       <form className="logon-form" onSubmit={handleSubmit}>
         <h2>Log ind</h2>
         <img 
-                src="https://pixabay.com/get/ge16b237ba7372a19743f086753f80cac6d93d38ff9285497ee4d774d1036b517096e6277251ff15b65693a1c4e9384a0_640.png" 
+                src="https://cdn.pixabay.com/photo/2024/02/19/02/02/login-8582362_1280.png" 
                 alt="Login illustration" 
                 style={{ height: "150px", borderRadius: "10px", marginBottom: "20px" }}
             />
