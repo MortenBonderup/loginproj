@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
   background: #f3f4f6;
+  height: 600px;
 }
 
 .logon-form {
