@@ -22,7 +22,7 @@ const CreateUser = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password); // Logger brugeren ind med e-mail og adgangskode
       console.log("Login succesfuldt!"); // Skriver en besked i konsollen for at indikere en vellykket login
-      sessionStorage.setItem("brugernavn", email); // Gemmer brugernavnet midlertidigt i sessionStorage, så det kan bruges senere i sessionen
+      sessionStorage.setItem("email", email); // Gemmer email midlertidigt i sessionStorage, så det kan bruges senere i sessionen
       navigate("/admin"); // Omdirigerer brugeren til admin-siden efter succesfuldt login
     } catch (error) {
       setError(error.message); // Hvis der opstår en fejl, gemmes fejlbeskeden i state for at kunne vises i UI

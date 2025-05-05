@@ -9,14 +9,14 @@ export default function LoginForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  let user = sessionStorage.getItem("brugernavn");
+  let user = sessionStorage.getItem("email");
   
   const handleSubmit = async (event) => {
     event.preventDefault(); // Forhindrer standard handlingen for formularindsendelse, så siden ikke genindlæses
   
     try {
       await signInWithEmailAndPassword(auth, username, password); // Forsøger at logge brugeren ind med e-mail og adgangskode
-      sessionStorage.setItem("brugernavn", username); // Gemmer brugernavnet i sessionStorage, så det kan bruges senere i sessionen
+      sessionStorage.setItem("email", username); // Gemmer brugernavnet i sessionStorage, så det kan bruges senere i sessionen
       console.log("Login successful!", username); // Logger en besked i konsollen for at indikere en vellykket login
       navigate("/admin"); // Omdirigerer brugeren til admin-siden efter succesfuldt login
     } catch (err) {
