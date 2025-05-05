@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { auth, signInWithEmailAndPassword } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import Logout from "../components/Logout";
+import Logout from "./Logout";
 
 
 export default function LoginForm() {
