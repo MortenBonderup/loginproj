@@ -6,6 +6,7 @@ import AdminPage from "./views/AdminPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import './App.css';
 import CreateUser from "./views/CreateUser";
+import LogoutOnClose from "./components/LogoutOnClose";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,10 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <RouterProvider router={router} />
+        <>
+            <LogoutOnClose />
+            <RouterProvider router={router} />
+        </>
     );
 }
 

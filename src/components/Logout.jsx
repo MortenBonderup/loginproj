@@ -9,7 +9,7 @@ export default function Logout() {
     async function handleLogout() {
         try {
             signOut(auth);
-            sessionStorage.removeItem('brugernavn');
+            sessionStorage.removeItem('email');
             navigate("/");
         } catch (error) {
             alert(error);
