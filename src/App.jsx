@@ -21,9 +21,9 @@ const router = createBrowserRouter([
                 element: <UserPage />,
             },
             {
-                path: "admin",
-                element: <ProtectedRoute element={<AdminPage />} />,
-            },
+                path: "admin", // Definerer stien til "admin"-siden
+                element: <ProtectedRoute element={<AdminPage />} />, // Beskytter admin-siden ved at indpakke den i "ProtectedRoute"
+            },  
             {
                 path: "opret",
                 element: <CreateUser />,

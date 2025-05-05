@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { auth, signInWithEmailAndPassword } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import Logout from "../components/Logout";
 
 
 export default function LoginForm() {
@@ -11,16 +12,18 @@ export default function LoginForm() {
   let user = sessionStorage.getItem("brugernavn");
   
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Forhindrer standard handlingen for formularindsendelse, så siden ikke genindlæses
+  
     try {
-      await signInWithEmailAndPassword(auth, username, password);
-      sessionStorage.setItem("brugernavn", username);
-      console.log("Login successful!", username);
-      navigate("/admin");
+      await signInWithEmailAndPassword(auth, username, password); // Forsøger at logge brugeren ind med e-mail og adgangskode
+      sessionStorage.setItem("brugernavn", username); // Gemmer brugernavnet i sessionStorage, så det kan bruges senere i sessionen
+      console.log("Login successful!", username); // Logger en besked i konsollen for at indikere en vellykket login
+      navigate("/admin"); // Omdirigerer brugeren til admin-siden efter succesfuldt login
     } catch (err) {
-      setError("Fejl ved login: " + err.message);
+      setError("Fejl ved login: " + err.message); // Hvis der opstår en fejl, vises en fejlmeddelelse til brugeren
     }
   };
+  
 
   return (
     <div className="logon-container">
@@ -52,6 +55,7 @@ export default function LoginForm() {
           />
         </label>
         <button type="submit">Log ind</button>
+        <Logout />
       </form>
     </div>
   );
